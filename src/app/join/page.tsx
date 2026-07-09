@@ -95,7 +95,7 @@ export default function Join() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
               <div>
                 <label className="block text-gsl-beige text-sm mb-2">Âge</label>
-                <input type="number" name="age" value={formData.age} onChange={handleChange} required className={inputStyle} placeholder="Ton âge" />
+                <input type="number" name="age" value={formData.age} onChange={handleChange} required min={14} max={99} className={inputStyle} placeholder="Ton âge" />
               </div>
               <div>
                 <label className="block text-gsl-beige text-sm mb-2">Email</label>
