@@ -20,7 +20,7 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="bg-gsl-dark text-white px-6 py-4 sticky top-0 z-50">
+        <nav className="bg-gsl-dark text-white px-6 py-4 sticky top-0 z-50 relative">
             <div className="max-w-6xl mx-auto flex items-center justify-between">
                 <Link href="/">
                   <Image src="/logo-light.png" alt="GSL Studio" width={120} height={40}/>
@@ -54,7 +54,7 @@ export default function Navbar() {
 
                     {/* Mobile menu */}
                     {isOpen && (
-                        <div className="md:hidden mt-4 flex-col gap-3">
+                        <div className="md:hidden absolute top-full left-0 right-0 bg-gsl-dark border-t border-gsl-beige/20 flex flex-col gap-4 px-6 py-6 shadow-lg shadow-black/50">
                             {links.map((link) => (
                                 <Link
                                     key={link.href}
@@ -71,6 +71,5 @@ export default function Navbar() {
                             ))}
                         </div>
                     )}
-                    </nav>
-                );
-            }
+                </nav>
+    )}
