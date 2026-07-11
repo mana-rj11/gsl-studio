@@ -2,9 +2,12 @@ export default function About() {
   return (
     <div>
       {/* Header */}
-      <section className="py-20 px-6 bg-gsl-brown text-center">
+      <section className="py-20 px-6 bg-gsl-brown text-center relative">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/about-bg.jpg')", backgroundPosition: "center 35%" }} />
+        <div className="relative z-10">
         <h1 className="text-4xl font-bold mb-4">À propos</h1>
         <p className="text-gsl-beige text-lg">Qui sommes-nous ?</p>
+        </div>
       </section>
 
       {/* Présentation */}

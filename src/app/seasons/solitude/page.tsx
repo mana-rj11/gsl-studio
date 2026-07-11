@@ -5,12 +5,16 @@ export default function Solitude() {
     return (
         <div>
             {/* Header */}
-            <section className="py-20 px-6 bg-gsl-brown text-center">
+            <section className="py-20 px-6 bg-gsl-brown text-center relative">
+                <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/solitude-bg.jpg')", backgroundPosition: "center 41%" }} />
+                <div className="absolute inset-0 bg-gsl-dark/60"/>
+                <div className="relative z-10">
                 <p className="text-gsl-beige text-sm mb-2">Saison 1</p>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">SOLITUDE</h1>
                 <p className="text-gsl-beige text-lg italic">
                     Même lorsque tout semble sombre, il existe toujours une lumière au bout du tunnel.
                 </p>
+                </div>
             </section>
 
             {/* Pitch */}

@@ -15,12 +15,16 @@ export default function Seasons() {
     return (
         <div>
             {/* Header */}
-            <section className="py-20 px-6 bg-gsl-brown text-center">
+            <section className="py-20 px-6 bg-gsl-brown text-center relative">
+                <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/seasons-bg.jpg')" }} />
+                <div className="absolute inset-0 bg-gsl-dark/60" />
+                <div className="relative z-10">
                 <h1 className="text-4xl font-bold mb-4">Les Saisons</h1>
                 <p className="text-gsl-beige text-lg">
                     Chaque saison explore différents thèmes de la vie quotidienne
                     à travers des courts-métrages.
                 </p>
+                </div>
             </section>
 
             {/* Thèmes */}
