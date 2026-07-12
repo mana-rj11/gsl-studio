@@ -29,7 +29,7 @@ export default function Seasons() {
 
             {/* Thèmes */}
             <section className="py-16 px-6 bg-gsl-dark">
-                <div className="max-w-4xl mx-auto text-center mb-16">
+                <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in-up">
                     <h2 className="text-2xl font-bold mb-8">Nos thématiques</h2>
                     <div className="flex flex-wrap justify-center gap-3">
                         {["Solitude", "Identité", "Peur", "Rejet", "Pardon", "Santé mentale", "Espoir"].map((theme) => (
@@ -43,7 +43,7 @@ export default function Seasons() {
 
             {/* Liste des saisons */}
             <section className="py-16 px-6 bg-gsl-brown">
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-4xl mx-auto mb-16 animate-fade-in-up">
                     {seasons.map((season) => (
                         <Link href={season.link} key={season.number} className="block group">
                             <div className="border border-gsl-beige/20 rounded-lg p-8 hover:border-gsl-beige transition">

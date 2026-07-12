@@ -12,7 +12,7 @@ export default function About() {
 
       {/* Présentation */}
       <section className="py-16 px-6 bg-gsl-dark">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto animate-fade-in-up">
           <p className="text-gsl-beige text-lg leading-relaxed mb-8">
             Nous sommes une équipe d&apos;étudiants passionnés par le cinéma et le storytelling.
             Notre objectif est de créer des œuvres qui inspirent, encouragent et apportent
@@ -23,7 +23,7 @@ export default function About() {
 
       {/* Vision */}
       <section className="py-16 px-6 bg-gsl-brown">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto animate-fade-in-up">
           <h2 className="text-3xl font-bold mb-6">Notre vision</h2>
           <p className="text-gsl-beige text-lg leading-relaxed">
             Illuminer le monde avec notre lumière en racontant des histoires qui touchent
@@ -35,7 +35,7 @@ export default function About() {
 
       {/* Mission */}
       <section className="py-16 px-6 bg-gsl-dark">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto animate-fade-in-up">
           <h2 className="text-3xl font-bold mb-6">Notre mission</h2>
           <div className="space-y-3 text-gsl-beige text-lg">
             <p>Mettre en lumière les combats invisibles.</p>
@@ -49,7 +49,7 @@ export default function About() {
 
       {/* Valeurs */}
       <section className="py-16 px-6 bg-gsl-brown">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
           <h2 className="text-3xl font-bold mb-10">Nos valeurs</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {["Espoir", "Authenticité", "Créativité", "Excellence", "Compassion", "Collaboration"].map((valeur) => (

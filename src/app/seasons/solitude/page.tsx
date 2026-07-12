@@ -19,7 +19,7 @@ export default function Solitude() {
 
             {/* Pitch */}
             <section className="py-16 px-6 bg-gsl-dark">
-                <div className="maw-w-3xl mx-auto">
+                <div className="maw-w-3xl mx-auto animate-fade-in-up">
                     <h2 className="text-2xl font-bold mb-6">Le pitch</h2>
                     <p className="text-gsl-beige text-lg leading-relaxed">
                         Alex est un jeune homme qui traverse une période de solitude intérieure.
@@ -30,7 +30,7 @@ export default function Solitude() {
 
             {/* Synopsis */}
             <section className="py-16 px-6 bg-gsl-brown">
-                <div className="max-w-3xl mx-auto">
+                <div className="max-w-3xl mx-auto animate-fade-in-up">
                     <h2 className="text-2xl font-bold mb-6">Synopsis</h2>
                     <p className="text-gsl-beige text-lg leading-relaxed">
                         Alex se sent différent de ses amis et lutte contre un conflit intérieur
@@ -44,7 +44,7 @@ export default function Solitude() {
 
             {/* Contenu prévu */}
             <section className="py-16 px-6 bg-gsl-dark">
-                <div className="max-w-3xl mx-auto">
+                <div className="max-w-3xl mx-auto animate-fade-in-up">
                     <h2 className="text-2xl font-bold mb-8">Contenu</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {[
