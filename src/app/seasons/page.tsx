@@ -1,4 +1,6 @@
 import Link from "next/link";
+import ScrollReveal from "@/components/ScrollReveal";
+
 export default function Seasons() {
     // liste des saisons, facile à agrandir plus tard
     const seasons = [
@@ -29,6 +31,7 @@ export default function Seasons() {
 
             {/* Thèmes */}
             <section className="py-16 px-6 bg-gsl-dark">
+                <ScrollReveal>
                 <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in-up">
                     <h2 className="text-2xl font-bold mb-8">Nos thématiques</h2>
                     <div className="flex flex-wrap justify-center gap-3">
@@ -39,10 +42,12 @@ export default function Seasons() {
                         ))}
                     </div>
                 </div>
+                </ScrollReveal>
             </section>
 
             {/* Liste des saisons */}
             <section className="py-16 px-6 bg-gsl-brown">
+                <ScrollReveal>
                 <div className="max-w-4xl mx-auto mb-16 animate-fade-in-up">
                     {seasons.map((season) => (
                         <Link href={season.link} key={season.number} className="block group">
@@ -63,6 +68,7 @@ export default function Seasons() {
                         </Link>
                     ))}
                 </div>
+                </ScrollReveal>
             </section>
 
 

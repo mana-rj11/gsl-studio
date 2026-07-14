@@ -1,4 +1,5 @@
 import { Film, Pen, Camera, Clapperboard } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Team() {
   // Les membres —  donnera les vrais noms et rôles plus tard
@@ -38,7 +39,8 @@ export default function Team() {
 
       {/* Fondatrices */}
       <section className="py-16 px-6 bg-gsl-dark">
-        <div className="max-w-4xl mx-auto animate-fade-in-up">
+        <ScrollReveal>
+        <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold mb-10 text-center">Les fondatrices</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {members.map((member) => (
@@ -55,11 +57,13 @@ export default function Team() {
             ))}
           </div>
         </div>
+        </ScrollReveal>
       </section>
 
       {/* Profils recherchés */}
       <section className="py-16 px-6 bg-gsl-brown">
-        <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
+        <ScrollReveal>
+        <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-4">On cherche aussi...</h2>
           <p className="text-gsl-beige mb-10">
             Toute personne passionnée par la création audiovisuelle
@@ -75,6 +79,7 @@ export default function Team() {
             ))}
           </div>
         </div>
+        </ScrollReveal>
       </section>
     </div>
   );

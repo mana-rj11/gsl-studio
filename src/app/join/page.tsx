@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Join() {
   const [formData, setFormData] = useState({
@@ -92,7 +93,8 @@ export default function Join() {
             </div>
 
             {/* Âge + Email — delay 0.5s */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+            <ScrollReveal delay={0.2}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4" style={{ animationDelay: "0.5s" }}>
               <div>
                 <label className="block text-gsl-beige text-sm mb-2">Âge</label>
                 <input type="number" name="age" value={formData.age} onChange={handleChange} required min={14} max={99} className={inputStyle} placeholder="Ton âge" />
@@ -102,6 +104,7 @@ export default function Join() {
                 <input type="email" name="email" value={formData.email} onChange={handleChange} required className={inputStyle} placeholder="ton@email.com" />
               </div>
             </div>
+            </ScrollReveal>
 
             {/* Profil — delay 0.6s */}
             <div className="animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
