@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { Scroll } from "lucide-react";
 
 export default function Join() {
   const [formData, setFormData] = useState({
@@ -35,9 +36,10 @@ export default function Join() {
   if (submitted) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gsl-dark px-6">
-        <div className="text-center animate-fade-in-up">
+        <ScrollReveal>
+        <div className="text-center" />
           <div className="text-6xl mb-6">🎬</div>
-          <h1 className="text-4xl font-bold mb-4">Merci !</h1>
+          <h1 className="font-display text-4xl font-bold mb-4">Merci !</h1>
           <p className="text-gsl-beige text-lg mb-8">
             Ta candidature a bien été envoyée. On te recontacte très vite !
           </p>
@@ -50,38 +52,46 @@ export default function Join() {
           >
             Envoyer une autre candidature
           </button>
+        </ScrollReveal>  
         </div>
-      </div>
     );
   }
 
   return (
     <div>
       {/* Header */}
-      <section className="py-20 px-6 bg-gsl-brown text-center">
-        <h1 className="text-4xl font-bold mb-4 animate-fade-in-up">Rejoindre GSL</h1>
-        <p className="text-gsl-beige text-lg animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-          Let Your Light Shine
-        </p>
+      <section className="py-20 px-6 text-center">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/seasons-bg.jpg')" }} />
+        <div className="absolute inset-0 bg-gsl-dark/60" />
+        <div className="relative z-10">
+          <p className="text-gsl-beige/50 text-sm tracking-widest uppercase mb-4">Let Your Light Shine</p>
+          <h1 className="font-display text-4xl md:text-5xl font-bold">Rejoindre GSL</h1>
+        </div>
       </section>
 
       {/* Intro */}
-      <section className="py-12 px-6 bg-gsl-dark">
-        <div className="max-w-2xl mx-auto text-center animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-          <p className="text-gsl-beige text-lg leading-relaxed">
-            Un espace destiné aux personnes souhaitant rejoindre Genesis Light Studio
-            et mettre leurs talents au service de projets inspirants.
-          </p>
+      <section className="py-16 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gsl-dark/90" />
+        <div className="relative z-10">
+          <ScrollReveal>
+            <div className="max-w-2xl mx-auto text-center">
+              <p className="text-gsl-beige text-lg leading-relaxed">
+                Un espace destiné aux personnes souhaitant rejoindre Genesis Light Studio
+                et mettre leurs talents au service de projets inspirants.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Formulaire */}
-      <section className="py-16 px-6 bg-gsl-dark">
+      <section className="py-16 px-6 bg-gsl-dark relative z-10">
         <div className="max-w-2xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
 
             {/* Nom + Prénom — delay 0.4s */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+            <ScrollReveal delay={0.1}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-gsl-beige text-sm mb-2">Nom</label>
                 <input type="text" name="nom" value={formData.nom} onChange={handleChange} required className={inputStyle} placeholder="Ton nom" />
@@ -91,10 +101,11 @@ export default function Join() {
                 <input type="text" name="prenom" value={formData.prenom} onChange={handleChange} required className={inputStyle} placeholder="Ton prénom" />
               </div>
             </div>
+            </ScrollReveal>
 
             {/* Âge + Email — delay 0.5s */}
-            <ScrollReveal delay={0.2}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4" style={{ animationDelay: "0.5s" }}>
+            <ScrollReveal delay={0.1}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-gsl-beige text-sm mb-2">Âge</label>
                 <input type="number" name="age" value={formData.age} onChange={handleChange} required min={14} max={99} className={inputStyle} placeholder="Ton âge" />
@@ -107,7 +118,8 @@ export default function Join() {
             </ScrollReveal>
 
             {/* Profil — delay 0.6s */}
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
+            <ScrollReveal delay={0.2}>
+            <div>
               <label className="block text-gsl-beige text-sm mb-2">Profil recherché</label>
               <select name="role" value={formData.role} onChange={handleChange} required className={inputStyle}>
                 <option value="">Sélectionne un profil</option>
@@ -123,9 +135,11 @@ export default function Join() {
                 <option value="autre">Autre</option>
               </select>
             </div>
+            </ScrollReveal>
 
             {/* Expérience — delay 0.7s */}
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.7s" }}>
+            <ScrollReveal delay={0.2}>
+            <div>
               <label className="block text-gsl-beige text-sm mb-2">Niveau d&apos;expérience</label>
               <div className="flex gap-6">
                 {["Débutant", "Amateur", "Confirmé"].map((niveau) => (
@@ -136,19 +150,24 @@ export default function Join() {
                 ))}
               </div>
             </div>
+            </ScrollReveal>
 
             {/* Motivation — delay 0.8s */}
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
+            <ScrollReveal delay={0.2}>
+            <div>
               <label className="block text-gsl-beige text-sm mb-2">Motivation</label>
               <textarea name="message" value={formData.message} onChange={handleChange} rows={4} className={`${inputStyle} resize-none`} placeholder="Pourquoi veux-tu rejoindre GSL ?" />
             </div>
 
             {/* Bouton — delay 0.9s */}
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.9s" }}>
+            <ScrollReveal delay={0.2}>
+            <div>
               <button type="submit" className="w-full bg-gsl-beige text-gsl-dark font-semibold py-4 rounded hover:bg-white hover:shadow-lg hover:shadow-gsl-beige/20 transition-all duration-300">
                 Envoyer ma candidature
               </button>
             </div>
+            </ScrollReveal>
+            </ScrollReveal>
           </form>
         </div>
       </section>

@@ -16,12 +16,17 @@ export default function About() {
 
       {/* Présentation */}
       <section className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-gsl-dark to-gsl-brown/80">
-          <p className="text-gsl-beige text-lg leading-relaxed mb-8">
-            Nous sommes une équipe d&apos;étudiants passionnés par le cinéma et le storytelling.
-            Notre objectif est de créer des œuvres qui inspirent, encouragent et apportent
-            de l&apos;espoir à travers des histoires authentiques.
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-b from-gsl-dark to-gsl-brown/80" />
+        <div className="relative z-10">
+          <ScrollReveal>
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-gsl-beige text-lg leading-relaxed mb-8">
+                Nous sommes une équipe d&apos;étudiants passionnés par le cinéma et le storytelling.
+                Notre objectif est de créer des œuvres qui inspirent, encouragent et apportent
+                de l&apos;espoir à travers des histoires authentiques.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
