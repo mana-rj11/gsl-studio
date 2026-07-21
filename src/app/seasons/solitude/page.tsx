@@ -1,4 +1,4 @@
-import { Film, Pen } from "lucide-react";
+import { Camera, Clapperboard, Theater } from "lucide-react";
 
 export default function Solitude() {
     return (

@@ -1,4 +1,4 @@
-import { Film, Pen, Camera, Clapperboard } from "lucide-react";
+import { Film, Pen } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import Link from "next/link";
 
