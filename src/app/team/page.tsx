@@ -1,5 +1,6 @@
 import { Film, Pen, Camera, Clapperboard } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import Link from "next/link";
 
 export default function Team() {
   // Les membres —  donnera les vrais noms et rôles plus tard
@@ -78,12 +79,13 @@ export default function Team() {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {profiles.map((profile) => (
-                <span
+                <Link
                   key={profile}
-                  className="border border-gsl-beige/30 text-gsl-beige px-5 py-2 rounded-full text-sm hover:bg-gsl-dark hover:border-gsl-beige transition-all duration-300 cursor-default"
+                  href="/join"
+                  className="border border-gsl-beige/30 text-gsl-beige px-5 py-2 rounded-full text-sm hover:bg-gsl-dark hover:border-gsl-beige transition-all duration-300"
                 >
                   {profile}
-                </span>
+                </Link>
               ))}
             </div>
             </div>

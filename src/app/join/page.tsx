@@ -23,11 +23,34 @@ export default function Join() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Candidature envoyée :", formData);
-    setSubmitted(true);
-  };
+    setLoading(true);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        access_key: "caa816c3-9206-4f66-96ac-139d562e0c0e",
+        subject: "Nouvelle candidature GSL",
+        from_name: "GSL Studio",
+        nom: formData.nom,
+        prenom: formData.prenom,
+        age: formData.age,
+        email: formData.email,
+        role: formData.role,
+        experience: formData.experience,
+        motivation: formData.message,
+      }),
+    });
+
+    if (response.ok) {
+      setSubmitted(true);
+    }
+    setLoading(false);
+  }
 
   // Style commun pour tous les champs — glow-input active le glow au focus
   const inputStyle =
@@ -162,8 +185,8 @@ export default function Join() {
             {/* Bouton — delay 0.9s */}
             <ScrollReveal delay={0.2}>
             <div>
-              <button type="submit" className="w-full bg-gsl-beige text-gsl-dark font-semibold py-4 rounded hover:bg-white hover:shadow-lg hover:shadow-gsl-beige/20 transition-all duration-300">
-                Envoyer ma candidature
+              <button type="submit" disabled={loading} className="w-full bg-gsl-beige text-gsl-dark front-semibold py-4 rounded hover:bg-white hover:shadow-lg hover:shadow-gsl/20 transition-all duration-300 disabled:opacity-50">
+                {loading ? "Envoie en cours..." : "Envoyer ma candidature"}
               </button>
             </div>
             </ScrollReveal>
