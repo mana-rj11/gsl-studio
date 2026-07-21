@@ -48,8 +48,8 @@ export default function Contact() {
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/solitude-bg.jpg')" }} />
         <div className="absolute inset-0 bg-gsl-dark/40" />
         <div className="relative z-10">
-          <p className="text-gsl-beige/50 text-sm tracking-widest uppercase mb-4 animate-fade-in-up">Une question ? Écris-nous !</p>
-          <h1 className="font-display text-4xl md:text-5xl font-bold animate-fade-in-up">Contact</h1>
+          <p className="text-gsl-beige/50 text-sm tracking-widest uppercase mb-4">Une question ? Écris-nous !</p>
+          <h1 className="font-display text-4xl md:text-5xl font-bold">Contact</h1>
         </div>
       </section>
 
