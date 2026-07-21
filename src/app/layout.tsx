@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${inter.className} ${playfair.variable} font-sans bg-gsl-dark text-white`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans bg-gsl-dark text-white`}>
         <Navbar />
         <main>{children}</main>
         <Footer />

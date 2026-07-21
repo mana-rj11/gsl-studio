@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Mail, AtSign, Send, ExternalLink } from "lucide-react";
-import ScrollReveal from "@/components/ScrollReveal";
+// import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -32,13 +32,11 @@ export default function Contact() {
   if (submitted) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gsl-dark px-6">
-        <ScrollReveal>
         <div className="text-center">
           <Send size={48} className="text-gsl-beige mx-auto mb-6" />
-          <h1 className="text-4xl font-bold mb-4">Message envoyé !</h1>
+          <h1 className="font-display text-4xl font-bold mb-4">Message envoyé !</h1>
           <p className="text-gsl-beige text-lg">On te répond très vite.</p>
         </div>
-        </ScrollReveal>
       </div>
     );
   }
@@ -46,19 +44,20 @@ export default function Contact() {
   return (
     <div>
       {/* Header */}
-      <section className="py-20 px-6 bg-gsl-brown text-center">
-        <h1 className="text-4xl font-display font-bold mb-4">Contact</h1>
-        <p className="text-gsl-beige text-lg" style={{ animationDelay: "0.2s" }}>
-          Une question ? Écris-nous !
-        </p>
+      <section className="py-20 px-6 text-center relative">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/solitude-bg.jpg')" }} />
+        <div className="absolute inset-0 bg-gsl-dark/40" />
+        <div className="relative z-10">
+          <p className="text-gsl-beige/50 text-sm tracking-widest uppercase mb-4 animate-fade-in-up">Une question ? Écris-nous !</p>
+          <h1 className="font-display text-4xl md:text-5xl font-bold animate-fade-in-up">Contact</h1>
+        </div>
       </section>
 
       {/* Coordonnées */}
-      <section className="py-16 px-6 bg-gsl-dark">
-        <ScrollReveal>
+      <section className="py-20 px-6 bg-gsl-dark">
         <div className="max-w-xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8 text-center">Nos coordonnées</h2>
-          <div className="flex flex-col sm:flex-row justify-center gap-8">
+          <h2 className="font-display text-2xl font-bold mb-8 text-center animate-fade-in-up">Nos coordonnées</h2>
+          <div className="flex flex-col sm:flex-row justify-center gap-8 animate-fade-in-up">
             <a href="mailto:genesislight.studio@outlook.com" className="flex items-center gap-4 group p-4 rounded-lg border border-gsl-beige/20 hover:border-gsl-beige hover:bg-gsl-brown/50 transition-all duration-300">
               <Mail size={28} className="text-gsl-beige group-hover:scale-110 transition-transform duration-300" />
               <div>
@@ -78,17 +77,15 @@ export default function Contact() {
             </a>
           </div>
         </div>
-        </ScrollReveal>
       </section>
 
       {/* Formulaire */}
-      <section className="py-16 px-6 bg-gsl-brown">
+      <section className="py-20 px-6 bg-gsl-brown">
         <div className="max-w-lg mx-auto">
-          <h2 className="text-2xl font-bold mb-8 text-center">
+          <h2 className="font-display text-2xl font-bold mb-8 text-center animate-fade-in-up">
             Envoie un message
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <ScrollReveal>
+          <form onSubmit={handleSubmit} className="space-y-4 animate-fade-in-up">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-gsl-beige text-sm mb-2">Nom</label>
@@ -112,10 +109,9 @@ export default function Contact() {
                 Envoyer
               </button>
             </div>
-            </ScrollReveal>
           </form>
-        </div>
+          </div>
       </section>
-    </div>
-  );
-}
+        </div>
+    );
+  }
