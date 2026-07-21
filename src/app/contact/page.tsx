@@ -20,10 +20,29 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Message envoyé :", formData);
-    setSubmitted(true);
+    setLoading(true);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        access_key: "caa816c3-9206-4f66-96ac-139d562e0c0e",
+        subject: "Nouveau message GSL - Contact",
+        from_name: formData.nom,
+        email: formData.email,
+        sujet: formData.sujet,
+        message: formData.message,
+      }),
+    });
+
+    if (response.ok) {
+      setSubmitted(true);
+    }
+    setLoading(false);
   };
 
   const inputStyle =
@@ -105,8 +124,8 @@ export default function Contact() {
               <textarea name="message" value={formData.message} onChange={handleChange} required rows={5} className={`${inputStyle} resize-none`} placeholder="Ton message..." />
             </div>
             <div>
-              <button type="submit" className="w-full bg-gsl-dark text-white font-semibold py-4 rounded hover:bg-gsl-beige hover:text-gsl-dark hover:shadow-lg hover:shadow-gsl-beige/20 transition-all duration-300">
-                Envoyer
+              <button type="submit" disabled={loading} className="w-full bg-gsl-dark text-white font-semibold py-4 rounded hover:bg-gsl-beige hover:text-gsl-dark hover:shadow-lg hover:shadow-gsl-beige/20 transition-all duration-300 disabled:opacity-50">
+                {loading ? "Envoi en cours..." : "Envoyer"}
               </button>
             </div>
           </form>
