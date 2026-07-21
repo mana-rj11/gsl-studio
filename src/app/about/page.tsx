@@ -1,5 +1,4 @@
 import ScrollReveal from "@/components/ScrollReveal";
-import { Scroll } from "lucide-react";
 export default function About() {
   return (
     <div>

@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Clapperboard, Camera, Theater } from "lucide-react";
+import { Film, Pen } from "lucide-react";
 
 export default function Solitude() {
     return (

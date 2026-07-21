@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
-import { Scroll } from "lucide-react";
 
 export default function Join() {
   const [formData, setFormData] = useState({
